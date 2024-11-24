@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Credibility Analyzer</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+        integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../style/selectSuspect.css">
+
+
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-analytics.js"></script>
+    <script src="../script/form2.js"></script>
+
+</head>
+
+<body onload="fillSuspectList()">
+    <div class="testbox">
+        <form>
+            <div class="banner">
+                <h1>Credibility Analyzer</h1>
+            </div>
+            <div class="btn-block">
+                <button type="submit" onclick="showInputForm()">Enter new suspect record</button>
+                <button type="submit" onclick="showSelectSuspect()" id="selectSuspect">Select suspect</button>
+            </div>
+            <div class="showInputForm" id="showInputForm" style="display: none;">
+                <p>Suspect Information</p>
+                <div class="item">
+                    <label for="name">Name<span>*</span></label>
+                    <input id="name" type="text" name="name" required />
+                </div>
+                <div class="item">
+                    <label for="crime">Alleged Crime<span>*</span></label>
+                    <input id="crime" type="text" name="crime" required />
+                </div>
+                <div class="item">
+                    <label for="height">Height(cm)<span>*</span></label>
+                    <input id="height" type="number" name="height" required />
+                </div>
+                <div class="item">
+                    <label for="weight">Weight(kg)<span>*</span></label>
+                    <input id="weight" type="number" name="weight" required />
+                </div>
+                <div class="item">
+                    <label for="idnumber">Aadhar Number<span>*</span></label>
+                    <input id="idnumber" type="number" name="idnumber" required />
+                </div>
+                <div class="item">
+                    <label for="dob">Date of Birth<span>*</span></label>
+                    <input id="dob" type="date" name="dob" required />
+                    <i class="fas fa-calendar-alt"></i>
+                </div>
+                <div class="item">
+                    <label for="hypo">Premise<span>*</span></label>
+                    <input id="hypo" type="text" name="hypo" required />
+                </div>
+                <div class="question">
+                    <label>Gender</label>
+                    <div class="question-answer">
+                        <div>
+                            <input type="radio" value="none" id="male" name="gender" />
+                            <label for="male" class="radio"><span>Male</span></label>
+                        </div>
+                        <div>
+                            <input type="radio" value="none" id="female" name="gender" />
+                            <label for="female" class="radio"><span>Female</span></label>
+                        </div>
+                    </div>
+                </div>
+                <div class="btn-block">
+                    <button type="submit" id="submitButton" onclick="storeSuspectData()">SUBMIT</button>
+                </div>
+            </div>
+            <div id="showSelectSuspect" style="display: none;">
+
+                <div id="outerdiv"></div>
+            </div>
+        </form>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

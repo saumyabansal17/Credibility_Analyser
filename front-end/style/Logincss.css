@@ -1,0 +1,57 @@
+html,body{
+background-image: url('http://getwallpapers.com/wallpaper/full/a/5/d/544750.jpg');
+background-size: cover;
+background-repeat: no-repeat;
+height: 100%;
+}
+
+.loginlobby{
+	width: 40%;
+	height: 60%;
+	background: rgba(0,0,0,0.3);
+	border-radius: 7%;
+	position: relative;
+	top:20%;
+	left:30%;
+}
+
+legend{
+	font-size: 40px;
+}
+
+legend .scheduler-border{
+    width:inherit; 
+    padding:0 10px;
+    border-bottom:none;
+}
+
+input{
+	color: #ffffff;
+	padding: 5px 0;
+	margin: 0 auto;  
+	width: 60%;
+	border-radius: 5px;
+	background: rgba(0,0,0,0.3);
+}
+
+::placeholder{
+	color: #ffffff;
+}
+
+.li{
+	width: 29%;
+	margin-left: 20%;
+	transform: scale(.9);
+	transition: all .7s;
+}
+
+.su{
+	width: 29%;
+	margin-right: 20%;
+	transform: scale(.9);
+	transition: all .7s;
+}
+
+button:hover {
+	transform: scale(1.1);
+}
